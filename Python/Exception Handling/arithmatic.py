@@ -1,5 +1,6 @@
 num1 = input("Enter first number: ")
 num2 = input("Enter second number: ")
+
 try:
     result = int(num1) / int(num2)
 except TypeError as te:
@@ -15,3 +16,13 @@ except Exception as e:
     print("An error occurred: ", e)
     result = None
 print("The result is: ", result)
+
+try:
+    result = int(num1) / int(num2)
+except (TypeError, ZeroDivisionError, ValueError) as e:
+    print("An error occurred: ", e)
+    result = None
+else: 
+    print("Division successful.")
+print("The result is: ", result)
+
